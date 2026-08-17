@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Per Alice ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#342b28;font-family:Georgia,"Times New Roman",serif;background:#f4eee7}
+.page{max-width:900px;margin:auto;padding:28px 16px 46px}
+.hero,.result{background:#fffdf9;border:1px solid #dccfc2;box-shadow:0 18px 55px rgba(60,42,30,.11)}
+.hero{text-align:center;padding:44px 18px 30px}
+.kicker{font:11px Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#92725d}
+h1{font-size:45px;font-weight:normal;margin:14px 0 10px;color:#713f43}
+.subtitle{font-size:19px;line-height:1.65;max-width:650px;margin:auto}
+.line{width:55px;height:1px;background:#b99a82;margin:24px auto}
+.question{font-size:26px;font-style:italic;margin:22px 0 6px}
+.hint{font:11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#89776b}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:25px}
+.city{padding:0;overflow:hidden;border:1px solid #d7c6b5;background:#fffaf4;color:#342b28;cursor:pointer;transition:.2s;font-family:Georgia,"Times New Roman",serif}
+.city:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(60,42,30,.15)}
+.city img{display:block;width:100%;height:230px;object-fit:cover}
+.text{padding:17px 13px 20px}
+.city h2{font-size:24px;font-weight:normal;letter-spacing:.08em;margin:0 0 8px}
+.city p{font-size:14px;line-height:1.5;color:#75665d;margin:0}
+.result{display:none;text-align:center;margin-top:24px;padding:34px 20px}
+.result h2{font-size:30px;font-weight:normal;margin:0 0 14px;color:#713f43}
+.result p{font-size:18px;line-height:1.75;margin:0}
+.signature{margin-top:22px;font-size:22px;font-style:italic;color:#735846}
+footer{text-align:center;margin-top:22px;color:#8b796c;font-size:13px;font-style:italic}
+@media(max-width:650px){h1{font-size:37px}.cards{grid-template-columns:1fr}.city img{height:210px}}
+</style>
+</head>
+<body>
+<div class="page">
+<section class="hero">
+<div class="kicker">Per il tuo compleanno</div>
+<h1>Alice ❤️</h1>
+<p class="subtitle">Quest'anno non ho scelto un regalo da mettere in una scatola.<br>Ho scelto un'esperienza da vivere insieme. ✈️</p>
+<div class="line"></div>
+<div class="question">Ma c'è una cosa che devi decidere tu…</div>
+<div class="hint">Scegli la nostra prossima destinazione</div>
+<div class="cards">
+<button class="city" onclick="choose('Edimburgo')">
+<img src="edimburgo.jpg" alt="Edimburgo">
+<div class="text"><h2>🏰 EDIMBURGO</h2><p>Castelli, atmosfera scozzese e stradine da esplorare.</p></div>
+</button>
+<button class="city" onclick="choose('Londra')">
+<img src="londra.jpg" alt="Londra">
+<div class="text"><h2>🇬🇧 LONDRA</h2><p>Luci, musica, shopping e una città tutta da vivere.</p></div>
+</button>
+</div>
+</section>
+<section id="result" class="result">
+<h2>Hai scelto <span id="choice"></span> ❤️</h2>
+<p>Perfetto.<br>Ora manca solo una cosa: preparare la valigia. ✈️<br><br><strong>La destinazione l'hai scelta tu.<br>La persona con cui partire, invece, l'ho scelta io.</strong></p>
+<div class="signature">Ti amo, Alice ❤️</div>
+</section>
+<footer>Qualunque sarà la scelta, sarà un'avventura da ricordare.</footer>
+</div>
+<script>
+function choose(city){
+ document.getElementById('choice').textContent=city;
+ const r=document.getElementById('result'); r.style.display='block';
+ r.scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
+</body>
+</html>
